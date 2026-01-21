@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    background: #f0f3ff url('https://wallpaperaccess.com/full/2071449.jpg') center/cover fixed;
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* Pokémon Logo Font */
+  .poke-logo {
+    font-family: "Pokemon Solid", sans-serif;
+    color: #ffcb05;
+    font-size: 2.5rem;
+    text-shadow: 3px 3px 0 #2a75bb;
+  }
+  
+  .pokedex-header {
+    background: #d62828;
+    padding: 1rem 0;
+    border-bottom: 6px solid #a31212;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  
+  button {
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.2s ease;
+  }
+  
+  /* Main (yellow) button */
+  .poke-btn-main {
+    background: #ffcb05;
+    color: #2a75bb;
+    border: 3px solid #2a75bb;
+    padding: 0.6rem 1.5rem;
+  }
+  .poke-btn-main:hover {
+    background: #ffe066;
+    transform: translateY(-2px);
+  }
+  
+  /* Secondary (blue) */
+  .poke-btn-secondary {
+    background: #2a75bb;
+    color: white;
+    border: 2px solid #184c7d;
+    padding: 0.5rem 1.2rem;
+  }
+  .poke-btn-secondary:hover {
+    background: #1f5c8c;
+  }
+  
+  /* Danger button */
+  .poke-btn-danger {
+    background: #e63946;
+    color: white;
+    border: none;
+  }
+  .poke-btn-danger:hover {
+    background: #b22222;
+  }
+  
+  .pokemon-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #e2e8f0;
+    transition: 0.25s ease;
+    backdrop-filter: blur(6px);
+  }
+  
+  .pokemon-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #ffcb05;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  
+  .pokemon-thumb img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .type-pill {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    margin-right: 0.4rem;
+  }
+  
+  .type-fire { background: #ee8130; }
+  .type-water { background: #6390f0; }
+  .type-grass { background: #7ac74c; }
+  .type-electric { background: #f7d02c; color: black; }
+  .type-ice { background: #96d9d6; }
+  .type-fighting { background: #c22e28; }
+  .type-poison { background: #a33ea1; }
+  .type-ground { background: #e2bf65; }
+  .type-flying { background: #a98ff3; }
+  .type-psychic { background: #f95587; }
+  .type-bug { background: #a6b91a; }
+  .type-rock { background: #b6a136; }
+  .type-ghost { background: #735797; }
+  .type-dark { background: #705746; }
+  .type-dragon { background: #6f35fc; }
+  .type-steel { background: #b7b7ce; }
+  .type-fairy { background: #d685ad; }
+  
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10,10,10,0.45);
+    padding: 1rem;
+    z-index: 1050;
+    backdrop-filter: blur(3px);
+  }
+  .modal-overlay[aria-hidden="false"] {
+    display: flex;
+  }
+  
+  /* Modal card */
+  .modal-card {
+    width: 100%;
+    max-width: 720px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    animation: fadeInModal 0.25s ease-out;
+  }
+  
+  /* Close button */
+  .modal-close {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  /* Modal content layout */
+  .modal-body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  
+  .modal-body img {
+    width: 100%;
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 0.5rem;
+    object-fit: contain;
+  }
+  
+  .modal-types .type-pill {
+    background: #e9ecef;
+    color: #212529;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+  
+  /* Stats box */
+  .modal-stats {
+    background: #f8f9fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.75rem;
+  }
+  
+  .modal-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .modal-stat:last-child {
+    border-bottom: none;
+  }
+  
+  /* Bottom action buttons */
+  .modal-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.6rem;
+  }
+  
+  /* Animation */
+  @keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive modal */
+  @media (max-width: 992px) {
+    .modal-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .caught-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+  }
+  
+  .caught-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .caught-title {
+    font-family: "Pokemon Solid";
+    font-size: 1.4rem;
+    color: #2a75bb;
+  }
+  
+  .caught-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dcdcdc;
+    display: flex;
+    justify-content: space-between;
+  }
+  
